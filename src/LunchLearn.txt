@@ -1,0 +1,20 @@
+Angular Lunch and Learn
+- Observables (finite & infinite)
+	> Always result in value, error, or completion
+	> value: next(value), error(Error/Exception), completion(no value) 
+	> can never be error and complete, it will be either/or, mostly next matters
+- Subscribing
+	> Observable won't emit unless you subscribe
+	> Best practice has always been to unsubscribe when an observable subscription is no longer needed
+		> OnDestroy, maintain a subscription collection
+	> Really only matters for infinite observables that are manually subscribed to as rxjs should take care of finite observables
+	> Async pipe elminates the need for this as well
+	> Another method exists to use takeUntil(Subject) as the first operator in a pipe chain and then on ngOnDestroy call .next(something/true), then .complete on the subject
+	which will complete the observable.
+
+- Subject
+- BehaviorSubject
+- RXJS (Reactive Extensions Library for JavaScript)
+	> Operators
+- Pipes
+- Custom Validators
