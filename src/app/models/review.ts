@@ -1,5 +1,5 @@
 export class Review {
-    id: number = 0;
-    gameId: number = 0;
-    comment: string = '';
+  id: number = 0;
+  movieId: number = 0;
+  comment: string = '';
 }
