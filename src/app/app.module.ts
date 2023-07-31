@@ -8,6 +8,10 @@ import { SubjectsComponent } from './components/observables/subjects/subjects.co
 import { AsyncPipeComponent } from './components/observables/async-pipe/async-pipe.component';
 import { SubscriptionsComponent } from './components/observables/subscriptions/subscriptions.component';
 import { FinalComponent } from './components/observables/final/final.component';
+import { PipesComponent } from './components/common-concepts/pipes/pipes.component';
+import { DirectivesComponent } from './components/common-concepts/directives/directives.component';
+import { HttpInterceptorComponent } from './components/common-concepts/http-interceptor/http-interceptor.component';
+import { QuickOverviewComponent } from './components/common-concepts/quick-overview/quick-overview.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { FinalComponent } from './components/observables/final/final.component';
     SubjectsComponent,
     AsyncPipeComponent,
     SubscriptionsComponent,
-    FinalComponent
+    FinalComponent,
+    PipesComponent,
+    DirectivesComponent,
+    HttpInterceptorComponent,
+    QuickOverviewComponent
   ],
   imports: [
     BrowserModule,
