@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MovieLibraryService } from 'src/app/services/movie-library.service';
 
 @Component({
   selector: 'quick-overview',
@@ -6,14 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./quick-overview.component.css'],
 })
 export class QuickOverviewComponent implements OnInit {
-  constructor() {}
+  constructor(private movieLibSvc: MovieLibraryService) {}
+
+  templateBindings: string = 'How things show up in the HTML from code behind.';
 
   ngOnInit(): void {
-    //At its core - JS/Typescript, css, html
-    //Templates & Components
-    //Dependency Injection & Services
-    //Bindings
-    //Modules
-    //Routes
+    this.movieLibSvc.getMovies().subscribe((movies) => {
+      console.log(movies);
+    });
   }
 }

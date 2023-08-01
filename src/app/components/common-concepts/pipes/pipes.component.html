@@ -1,1 +1,8 @@
-<p>pipes works!</p>
+<h3>Pipes</h3>
+<p>Date: {{currentDate}}</p>
+<p>Date Pipe: {{currentDate | date: 'short'}}</p>
+
+<div>
+    <input type="number" [(ngModel)]="numberVal">
+    <span>{{numberVal | numberWord}}</span>
+</div>

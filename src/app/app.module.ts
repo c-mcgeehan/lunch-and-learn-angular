@@ -7,11 +7,13 @@ import { IntroComponent } from './components/observables/intro/intro.component';
 import { SubjectsComponent } from './components/observables/subjects/subjects.component';
 import { AsyncPipeComponent } from './components/observables/async-pipe/async-pipe.component';
 import { SubscriptionsComponent } from './components/observables/subscriptions/subscriptions.component';
-import { FinalComponent } from './components/observables/final/final.component';
 import { PipesComponent } from './components/common-concepts/pipes/pipes.component';
 import { DirectivesComponent } from './components/common-concepts/directives/directives.component';
-import { HttpInterceptorComponent } from './components/common-concepts/http-interceptor/http-interceptor.component';
 import { QuickOverviewComponent } from './components/common-concepts/quick-overview/quick-overview.component';
+import { FormsModule } from '@angular/forms';
+import { NumberWordPipe } from './pipes/number-word.pipe';
+import { CommonModule, DatePipe } from '@angular/common';
+import { ColorHoverDirective } from './directives/color-hover.directive';
 
 @NgModule({
   declarations: [
@@ -20,17 +22,14 @@ import { QuickOverviewComponent } from './components/common-concepts/quick-overv
     SubjectsComponent,
     AsyncPipeComponent,
     SubscriptionsComponent,
-    FinalComponent,
     PipesComponent,
     DirectivesComponent,
-    HttpInterceptorComponent,
-    QuickOverviewComponent
+    QuickOverviewComponent,
+    NumberWordPipe,
+    ColorHoverDirective,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule, FormsModule, CommonModule],
+  providers: [DatePipe],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

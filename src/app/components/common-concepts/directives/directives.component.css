@@ -1,0 +1,23 @@
+.shiny-button {
+    padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      background: linear-gradient(45deg, #5cb85c, #336633, #5cb85c);
+      background-size: 200% 200%;
+      animation: shinyEffect 2s linear infinite;
+      cursor: pointer;
+  }
+
+  @keyframes shinyEffect {
+    0% {
+      background-position: 0 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0 50%;
+    }
+  }
