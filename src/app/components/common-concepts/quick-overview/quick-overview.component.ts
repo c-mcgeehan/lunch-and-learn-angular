@@ -21,4 +21,8 @@ export class QuickOverviewComponent implements OnInit {
   toggleReactiveForms() {
     this.showReactiveForms = !this.showReactiveForms;
   }
+
+  captureSubmission(data: any) {
+    console.log('Captured Submission:', data);
+  }
 }

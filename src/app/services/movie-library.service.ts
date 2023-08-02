@@ -5,19 +5,27 @@ import { of, throwError } from 'rxjs';
 @Injectable({ providedIn: 'root' })
 export class MovieLibraryService {
   private MOVIE_LIST: Movie[] = [
-    { id: 1, title: 'Diablo IV', releaseDate: new Date('2023-05-01') },
+    { id: 1, title: 'Oppenheimer', releaseDate: new Date('2023-01-01') },
     {
       id: 2,
-      title: 'Zelda: Ocarina of Time',
-      releaseDate: new Date('1997-01-01'),
+      title: 'Top Gun: Maverick',
+      releaseDate: new Date('2022-01-01'),
     },
-    { id: 3, title: 'Pokemon: Yellow', releaseDate: new Date('1999-01-01') },
+    {
+      id: 3,
+      title: 'Harry Potter and the Sorcerers Stone',
+      releaseDate: new Date('2001-01-01'),
+    },
     {
       id: 4,
-      title: 'Call of Duty: Black Ops 2',
-      releaseDate: new Date('2010-01-01'),
+      title: 'Lord of the Rings: The Fellowship of the Ring',
+      releaseDate: new Date('2001-01-01'),
     },
-    { id: 5, title: 'Pong', releaseDate: new Date('1975-01-01') },
+    {
+      id: 5,
+      title: 'Star Wars: Return of the Jedi',
+      releaseDate: new Date('1983-01-01'),
+    },
   ];
 
   public constructor() {}

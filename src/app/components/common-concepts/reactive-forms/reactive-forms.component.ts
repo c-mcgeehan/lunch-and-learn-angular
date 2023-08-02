@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -16,11 +16,17 @@ export class ReactiveFormsComponent implements OnInit {
 
   public personForm?: FormGroup;
 
+  @Input()
+  defaultAge: number = 0;
+
+  @Output()
+  formSubmitted: EventEmitter<any> = new EventEmitter<any>();
+
   ngOnInit(): void {
     this.personForm = this.formBuilder.group({
       firstName: ['', [Validators.required]],
       lastName: new FormControl('', [Validators.maxLength(10)]),
-      age: new FormControl(''),
+      age: new FormControl(this.defaultAge),
     });
 
     this.personForm?.controls.age.valueChanges.subscribe((age) => {
@@ -29,6 +35,6 @@ export class ReactiveFormsComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('Form Data:', this.personForm?.value);
+    this.formSubmitted.emit(this.personForm?.value);
   }
 }

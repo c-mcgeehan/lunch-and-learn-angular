@@ -48,7 +48,7 @@ export class IntroComponent implements OnInit {
           console.log('post error tap', val);
         }),
         finalize(() => {
-          //This happens after the subscribe callback below the pipe
+          //This happens AFTER the subscribe callback below the pipe
           console.log('FINALIZED!');
         })
       )
@@ -66,7 +66,7 @@ export class IntroComponent implements OnInit {
       .pipe(
         switchMap((movie) => {
           //Cancel ongoing observable calls, only use last (click it with 2 game ids, the 2nd comes back if the 1st is slow)
-          console.log('game', movie);
+          console.log('movie', movie);
           //ADD TIMEOUT HERE TO EXAMPLE
           return this.reviewSvc.getReviewsByMovieId(movie.id);
         }),

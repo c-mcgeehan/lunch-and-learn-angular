@@ -6,9 +6,9 @@ import { of } from 'rxjs';
 export class ReviewService {
   private REVIEW_LIST: Review[] = [
     { id: 1, movieId: 1, comment: 'Meh..' },
-    { id: 1, movieId: 1, comment: 'Awesome game!' },
-    { id: 1, movieId: 2, comment: '10/10 would play again' },
-    { id: 1, movieId: 4, comment: 'Full of try hards' },
+    { id: 1, movieId: 1, comment: 'Awesome movie!' },
+    { id: 1, movieId: 2, comment: '10/10 would watch again' },
+    { id: 1, movieId: 4, comment: 'Was way too long' },
     { id: 1, movieId: 5, comment: 'Classic!' },
   ];
 

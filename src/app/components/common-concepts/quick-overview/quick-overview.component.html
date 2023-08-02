@@ -29,7 +29,6 @@
         <p>Routes</p>
         <p>How to traverse the app.</p>
     </li>
-
     <li>
         <p class="link-text"><a routerLink="/pipes">Pipes</a></p>
         <p>Transforming data, built in pipes and custom.</p>
@@ -38,10 +37,13 @@
         <p class="link-text"><a routerLink="/directives">Directives</a></p>
         <p>Additional behavior to elements, built in directives and custom.</p>
     </li>
-
     <li>
         <p (click)="toggleReactiveForms()">Reactive Forms</p>
         <p>Model driven form controls, these can be typed/untyped.</p>
-        <reactive-forms *ngIf="showReactiveForms"></reactive-forms>
+        <reactive-forms (formSubmitted)="captureSubmission($event)" [defaultAge]="18" *ngIf="showReactiveForms"></reactive-forms>
+    </li>
+    <li>
+        <p class="link-text"><a routerLink="/observables">Observables</a></p>
+        <p>More Detail here.</p>
     </li>
 </ul>
