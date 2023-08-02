@@ -6,8 +6,12 @@
         <p>JS/Typescript, CSS, HTML.</p>
     </li>
     <li>
+        <p>Angular CLI</p>
+        <p>ng build, ng serve, ng generate, ng test.</p>
+    </li>
+    <li>
         <p>Modules</p>
-        <p>These group components and/or pieces of functionality together.</p>
+        <p>These group components, pieces of functionality and imported modules together.</p>
     </li>
     <li>
         <p>Components</p>
@@ -25,12 +29,19 @@
         <p>Routes</p>
         <p>How to traverse the app.</p>
     </li>
+
     <li>
-        <p><a routerLink="/pipes">Pipes</a></p>
+        <p class="link-text"><a routerLink="/pipes">Pipes</a></p>
         <p>Transforming data, built in pipes and custom.</p>
     </li>
     <li>
-        <p><a routerLink="/directives">Directives</a></p>
+        <p class="link-text"><a routerLink="/directives">Directives</a></p>
         <p>Additional behavior to elements, built in directives and custom.</p>
+    </li>
+
+    <li>
+        <p (click)="toggleReactiveForms()">Reactive Forms</p>
+        <p>Model driven form controls, these can be typed/untyped.</p>
+        <reactive-forms *ngIf="showReactiveForms"></reactive-forms>
     </li>
 </ul>

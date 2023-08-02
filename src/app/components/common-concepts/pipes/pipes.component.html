@@ -3,6 +3,9 @@
 <p>Date Pipe: {{currentDate | date: 'short'}}</p>
 
 <div>
-    <input type="number" [(ngModel)]="numberVal">
+    <mat-form-field>
+        <mat-label>Your Label</mat-label>
+        <input  type="number" matInput [(ngModel)]="numberVal" placeholder="Enter a number">
+      </mat-form-field>
     <span>{{numberVal | numberWord}}</span>
 </div>

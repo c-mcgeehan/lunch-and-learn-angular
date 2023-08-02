@@ -1,0 +1,14 @@
+ul li p:first-child {
+    font-weight: bold;
+  }
+
+  .link-text {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .link-text:hover {
+    color: darkblue;
+    text-decoration: underline;
+  }

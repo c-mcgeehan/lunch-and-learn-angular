@@ -14,6 +14,12 @@ import { FormsModule } from '@angular/forms';
 import { NumberWordPipe } from './pipes/number-word.pipe';
 import { CommonModule, DatePipe } from '@angular/common';
 import { ColorHoverDirective } from './directives/color-hover.directive';
+import { ReactiveFormsComponent } from './components/common-concepts/reactive-forms/reactive-forms.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -27,8 +33,19 @@ import { ColorHoverDirective } from './directives/color-hover.directive';
     QuickOverviewComponent,
     NumberWordPipe,
     ColorHoverDirective,
+    ReactiveFormsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, CommonModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    CommonModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+  ],
   providers: [DatePipe],
   bootstrap: [AppComponent],
 })

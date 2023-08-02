@@ -10,10 +10,15 @@ export class QuickOverviewComponent implements OnInit {
   constructor(private movieLibSvc: MovieLibraryService) {}
 
   templateBindings: string = 'How things show up in the HTML from code behind.';
+  showReactiveForms: boolean = false;
 
   ngOnInit(): void {
     this.movieLibSvc.getMovies().subscribe((movies) => {
       console.log(movies);
     });
+  }
+
+  toggleReactiveForms() {
+    this.showReactiveForms = !this.showReactiveForms;
   }
 }
