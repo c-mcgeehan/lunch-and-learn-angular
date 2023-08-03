@@ -1,6 +1,7 @@
-<h3>Directives</h3>
+<h3>Directives Component</h3>
 
-<p>Built in directives</p>
+<div style="display:inline-block; margin-right:50px; vertical-align: top;">
+<h3>Built in directives</h3>
 <ul>
   <li>
     <b
@@ -24,30 +25,40 @@
     </div>
   </li>
 </ul>
+</div>
 
-<h3 style="margin-top: 20px">Structural directives</h3>
-<ul>
-  <li>
-    <p *ngIf="isShown" [hidden]="false">*ngIf</p>
-    <div>
-      <span>Show</span>
-      <input type="checkbox" [(ngModel)]="isShown" />
-    </div>
-  </li>
-  <li>
-    <p>*ngFor</p>
+
+<div style="display:inline-block; margin-right:50px; vertical-align: top;">
+  <h3>Structural directives</h3>
+  <ul>
+    <li>
+      <p *ngIf="isShown" [hidden]="false">*ngIf</p>
+      <div>
+        <span>Show</span>
+        <input type="checkbox" [(ngModel)]="isShown" />
+      </div>
+    </li>
+    <li>
+      <p>*ngFor</p>
+      <ul>
+        <li *ngFor="let item of items">
+          {{ item.name }} donated ${{ item.value }}
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div style="display:inline-block;vertical-align: top;">
+  <h3>Custom directives</h3>
     <ul>
-      <li *ngFor="let item of items">
-        {{ item.name }} donated ${{ item.value }}
-      </li>
+      <li colorHover hoverColor="green">Green</li>
+      <li colorHover hoverColor="red">Red</li>
+      <li colorHover hoverColor="blue">Blue</li>
+      <li colorHover hoverColor="yellow">Yellow</li>
     </ul>
-  </li>
-</ul>
+  </div>
 
-<div style="margin-top: 20px"><b>Custom directives</b></div>
-<ul>
-  <li colorHover hoverColor="green">Green</li>
-  <li colorHover hoverColor="red">Red</li>
-  <li colorHover hoverColor="blue">Blue</li>
-  <li colorHover hoverColor="yellow">Yellow</li>
-</ul>
+
+<div>
+

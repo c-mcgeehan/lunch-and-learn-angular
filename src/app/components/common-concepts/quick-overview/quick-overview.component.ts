@@ -12,15 +12,20 @@ export class QuickOverviewComponent implements OnInit {
 
   templateBindings: string =
     'How things show up in the HTML from code behind, two-way binding';
-  showReactiveForms: boolean = false;
+  showPipes: boolean = false;
+  showDirectives: boolean = false;
 
   movies: Movie[] = [];
   textVal: string = '';
 
   ngOnInit(): void {}
 
-  toggleReactiveForms() {
-    this.showReactiveForms = !this.showReactiveForms;
+  togglePipes() {
+    this.showPipes = !this.showPipes;
+  }
+
+  toggleDirectives() {
+    this.showDirectives = !this.showDirectives;
   }
 
   captureSubmission(data: any) {

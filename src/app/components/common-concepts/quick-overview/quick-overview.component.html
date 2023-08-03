@@ -42,12 +42,14 @@
     <p>How to traverse the app.</p>
   </li>
   <li>
-    <p class="link-text"><a routerLink="/pipes">Pipes</a></p>
+    <p>Pipes <span (click)="togglePipes()" style="font-weight:normal">(Expand/Hide)</span></p>
     <p>Transforming data, built in pipes and custom.</p>
+    <pipes *ngIf="showPipes"></pipes>
   </li>
   <li>
-    <p class="link-text"><a routerLink="/directives">Directives</a></p>
+    <p>Directives <span (click)="toggleDirectives()" style="font-weight:normal">(Expand/Hide)</span></p>
     <p>Additional behavior to elements, built in directives and custom.</p>
+    <directives *ngIf="showDirectives"></directives>
   </li>
   <li>
     <p>Reactive Forms</p>
