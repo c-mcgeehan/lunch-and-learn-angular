@@ -10,16 +10,14 @@ import { MovieLibraryService } from 'src/app/services/movie-library.service';
 export class QuickOverviewComponent implements OnInit {
   constructor(private movieLibSvc: MovieLibraryService) {}
 
-  templateBindings: string = 'How things show up in the HTML from code behind.';
+  templateBindings: string =
+    'How things show up in the HTML from code behind, two-way binding';
   showReactiveForms: boolean = false;
 
   movies: Movie[] = [];
+  textVal: string = '';
 
-  ngOnInit(): void {
-    this.movieLibSvc.getMovies().subscribe((movies) => {
-      console.log(movies);
-    });
-  }
+  ngOnInit(): void {}
 
   toggleReactiveForms() {
     this.showReactiveForms = !this.showReactiveForms;
@@ -29,7 +27,7 @@ export class QuickOverviewComponent implements OnInit {
     console.log('Captured Submission:', data);
   }
 
-  getMovies() {
+  populateMovies() {
     this.movieLibSvc.getMovies().subscribe((movies) => {
       this.movies = movies;
     });

@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class DirectivesComponent implements OnInit {
   constructor() {}
 
-  textVal: string = '';
   isBold: boolean = false;
   isShiny: boolean = false;
   isShown: boolean = true;

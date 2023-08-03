@@ -1,11 +1,16 @@
 <h3>Pipes</h3>
-<p>Date: {{currentDate}}</p>
-<p>Date Pipe: {{currentDate | date: 'short'}}</p>
+<p><b>Date no pipe:</b> {{ currentDate }}</p>
+<p><b>Date Pipe:</b> {{ currentDate | date : "short" }}</p>
 
 <div>
-    <mat-form-field>
-        <mat-label>Your Label</mat-label>
-        <input  type="number" matInput [(ngModel)]="numberVal" placeholder="Enter a number">
-      </mat-form-field>
-    <span>{{numberVal | numberWord}}</span>
+  <mat-form-field>
+    <mat-label>Your Label</mat-label>
+    <input
+      type="number"
+      matInput
+      [(ngModel)]="numberVal"
+      placeholder="Enter a number"
+    />
+  </mat-form-field>
+  <span>{{ numberVal | numberWord }}</span>
 </div>

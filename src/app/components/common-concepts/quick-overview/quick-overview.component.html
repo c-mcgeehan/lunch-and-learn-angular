@@ -12,28 +12,30 @@
   <li>
     <p>Modules</p>
     <p>
-      These group components, pieces of functionality and imported modules
-      together.
+      Container to group components, directive, pipes, services, and other items
+      together. Also used for organization.
     </p>
   </li>
   <li>
     <p>Components</p>
     <p>
       Could be a page or a single control, or just some HTML. These can have
-      coded functionality and are made up of an html, css, and .ts file,
-      optionally (spec.ts).
-    </p>
-  </li>
-  <li>
-    <p>Dependency Injection & Services</p>
-    <p>
-      How functionality makes it's way from a service into a component,
-      testability
+      coded functionality and are made up of html, css, and .ts files,
+      optionally spec.ts.
     </p>
   </li>
   <li>
     <p>Template Bindings</p>
     <p>{{ templateBindings }}</p>
+    <div>
+      <input
+        matInput
+        type="text"
+        [(ngModel)]="textVal"
+        placeholder="Enter Text"
+      />
+      <span>{{ textVal }}</span>
+    </div>
   </li>
   <li>
     <p>Routes</p>
@@ -48,12 +50,11 @@
     <p>Additional behavior to elements, built in directives and custom.</p>
   </li>
   <li>
-    <p (click)="toggleReactiveForms()">Reactive Forms</p>
+    <p>Reactive Forms</p>
     <p>Model driven form controls, these can be typed/untyped.</p>
     <reactive-forms
       (formSubmitted)="captureSubmission($event)"
       [defaultAge]="18"
-      *ngIf="showReactiveForms"
     ></reactive-forms>
   </li>
   <li>
@@ -63,7 +64,7 @@
     <p>Asynchronous programming, event handling, subscribable</p>
   </li>
 </ul>
-<button mat-raised-button (click)="getMovies()" color="primary">
+<button mat-raised-button (click)="populateMovies()" color="primary">
   Get Movies
 </button>
 <ul>

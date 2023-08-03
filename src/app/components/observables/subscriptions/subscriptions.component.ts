@@ -14,10 +14,12 @@ export class SubscriptionsComponent implements OnInit, OnDestroy {
   subscriptions = new Subscription();
 
   ngOnInit(): void {
+    //Infinite
     interval(1000).subscribe((val) => {
       console.log('interval...', val);
     });
 
+    //Finite
     this.movieLibrarySvc
       .getMovies()
       .pipe(delay(5000))
@@ -27,7 +29,6 @@ export class SubscriptionsComponent implements OnInit, OnDestroy {
 
     //Below is equivalent to:
     //const getMoviesSub = serviceCall.subscribe();
-    //this.subscriptions.add(getMoviesSub);
     this.subscriptions.add(
       this.movieLibrarySvc
         .getMovies()
@@ -36,6 +37,7 @@ export class SubscriptionsComponent implements OnInit, OnDestroy {
           console.log('get movies with subscription');
         })
     );
+    //this.subscriptions.add(getMoviesSub);
   }
 
   ngOnDestroy(): void {

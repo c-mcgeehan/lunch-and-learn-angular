@@ -1,13 +1,8 @@
 <h3>Observables Overview</h3>
 
 <ul>
-  <li id="myMouseLI">
-    <p>Service Calls & Events</p>
-    <p>How to make a web request</p>
-  </li>
   <li>
-    <p class="link-text"><a routerLink="/observables/subjects">Subjects</a></p>
-    <p>Broadcast messages throughout the application</p>
+    <p id="myMouseLI">Shared Service & Events</p>
     <div>
       <mat-form-field class="p-2 grow" appearance="outline">
         <mat-label>Movie Title</mat-label>
@@ -24,22 +19,20 @@
         Add New Movie
       </button>
     </p>
-  </li>
-  <li>
-    <p>Messaging</p>
-    <p>Broadcast messages throughout the application</p>
+    <movie-list></movie-list>
   </li>
   <li>
     <p class="link-text">
-      <a routerLink="/observables/subscriptions">Subscription Handling</a>
-    </p>
-    <p>Finite & infinite observables, subscribe callback</p>
-  </li>
-  <li>
-    <p class="link-text">
-      <a routerLink="/observables/async-pipe">Async Pipe</a>
+      <a routerLink="/observables/async-pipe"
+        >Async Pipe {{ movieCount$ | async }}</a
+      >
     </p>
     <p>Another way of handling a subscription</p>
   </li>
+  <li style="margin-top: 20px">
+    <p class="link-text">
+      <a routerLink="/observables/subscriptions">Subscription Handling</a>
+    </p>
+    <p>Finite & infinite observables, subscribe callback handling</p>
+  </li>
 </ul>
-<movie-list></movie-list>

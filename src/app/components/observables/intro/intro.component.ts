@@ -45,7 +45,7 @@ export class IntroComponent implements OnInit {
           //return of(0); //replacement observable value to return when an error occurs
         }), //Could put another catchError here to then return a replacement variable, or not to stop the observable stream
         tap((val) => {
-          console.log('post error tap', val);
+          console.log('log error tap', val);
         }),
         finalize(() => {
           //This happens AFTER the subscribe callback below the pipe
@@ -58,7 +58,7 @@ export class IntroComponent implements OnInit {
   }
 
   pipeCalls() {
-    //User selects a game they want to look into
+    //User selects a movie they want to see reviews for
 
     //Chaining calls
     this.movieLibrarySvc

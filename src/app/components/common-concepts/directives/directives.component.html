@@ -2,66 +2,52 @@
 
 <p>Built in directives</p>
 <ul>
-    <li><button [ngClass]="isShiny ? 'shiny-button' : ''">ngClass</button>
-        <div>
-            <span>Make Shiny</span>
-            <input type="checkbox" [(ngModel)]="isShiny">
-        </div>
-    </li>
-    <li>
-        <p [ngStyle]="{'font-weight' : isBold ? 'bold': 'normal' }">ngStyle</p>
-        <div>
-            <span>Embolden</span>
-            <input type="checkbox" [(ngModel)]="isBold">
-        </div>
-    </li>
-    <li>
-        <p>NgModel</p>
-        <div>
-            <input type="text" [(ngModel)]="textVal">
-            <span>{{textVal}}</span>
-        </div>
-    </li>
+  <li>
+    <b
+      ><button
+        style="font-weight: bold"
+        [ngClass]="isShiny ? 'shiny-button' : ''"
+      >
+        ngClass
+      </button></b
+    >
+    <div>
+      <span>Make Shiny</span>
+      <input type="checkbox" [(ngModel)]="isShiny" />
+    </div>
+  </li>
+  <li>
+    <p [ngStyle]="{ 'font-weight': isBold ? 'bold' : 'normal' }">ngStyle</p>
+    <div>
+      <span>Embolden</span>
+      <input type="checkbox" [(ngModel)]="isBold" />
+    </div>
+  </li>
 </ul>
 
-<p>Structural directives</p>
+<h3 style="margin-top: 20px">Structural directives</h3>
 <ul>
-    <li>
-        <p *ngIf="isShown" [hidden]="false">*ngIf</p>
-        <div>
-            <span>Show</span>
-            <input type="checkbox" [(ngModel)]="isShown">
-        </div>
-    </li>
-    <li>
-        <p>*ngFor</p>
-        <ul>
-            <li *ngFor="let item of items">{{item.name}} donated ${{item.value}}</li>
-        </ul>
-    </li>
-    <li>
-        <p>*ngSwitch</p>
-        <div [ngSwitch]="items.length + 1">
-            <p *ngSwitchCase="1">One</p>
-            <p *ngSwitchCase="2">Two</p>
-            <p *ngSwitchCase="3">Three</p>
-            <p *ngSwitchDefault>Default</p>
-        </div>
-    </li>
+  <li>
+    <p *ngIf="isShown" [hidden]="false">*ngIf</p>
+    <div>
+      <span>Show</span>
+      <input type="checkbox" [(ngModel)]="isShown" />
+    </div>
+  </li>
+  <li>
+    <p>*ngFor</p>
+    <ul>
+      <li *ngFor="let item of items">
+        {{ item.name }} donated ${{ item.value }}
+      </li>
+    </ul>
+  </li>
 </ul>
 
-<p>Custom directives</p>
+<div style="margin-top: 20px"><b>Custom directives</b></div>
 <ul>
-    <li colorHover hoverColor="green">
-        Green
-    </li>
-    <li colorHover hoverColor="red">
-        Red
-    </li>
-    <li colorHover hoverColor="blue">
-        Blue
-    </li>
-    <li colorHover hoverColor="yellow">
-        Yellow
-    </li>
+  <li colorHover hoverColor="green">Green</li>
+  <li colorHover hoverColor="red">Red</li>
+  <li colorHover hoverColor="blue">Blue</li>
+  <li colorHover hoverColor="yellow">Yellow</li>
 </ul>

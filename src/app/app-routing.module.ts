@@ -7,7 +7,6 @@ import { ReactiveFormsComponent } from './components/common-concepts/reactive-fo
 import { AsyncPipeComponent } from './components/observables/async-pipe/async-pipe.component';
 import { IntroComponent } from './components/observables/intro/intro.component';
 import { ObsOverviewComponent } from './components/observables/obs-overview/obs-overview.component';
-import { SubjectsComponent } from './components/observables/subjects/subjects.component';
 import { SubscriptionsComponent } from './components/observables/subscriptions/subscriptions.component';
 
 const routes: Routes = [
@@ -22,10 +21,6 @@ const routes: Routes = [
   {
     path: 'observables/subscriptions',
     component: SubscriptionsComponent,
-  },
-  {
-    path: 'observables/subjects',
-    component: SubjectsComponent,
   },
   {
     path: 'observables/async-pipe',
@@ -47,10 +42,9 @@ const routes: Routes = [
     path: '**',
     redirectTo: 'overview',
     //redirectTo: redirect to another route, common use is to redirect to a default route.
-    //canActivate: Runs to determine if the route can be activated, could include something like a role/claim check from something that implements CanActivate.
+    //canActivate: Runs to determine if the route can be activated, could include something like a role/claim check (guards) from something that implements CanActivate.
     //data: Static data desired to be passed to the route.
     //resolve: A resolver, something that retrieves data to activate the route.
-    //runGuardsAndResolvers: Rules on when to run the guards and resolvers before the component is loaded (how to protect a route and load data), otherwise always run on activation.
   },
 ];
 

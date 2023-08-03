@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { fromEvent } from 'rxjs';
+import { fromEvent, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Movie } from 'src/app/models/movie';
 import { MovieLibraryService } from 'src/app/services/movie-library.service';
 
 @Component({
@@ -8,7 +10,15 @@ import { MovieLibraryService } from 'src/app/services/movie-library.service';
   styleUrls: ['./obs-overview.component.css'],
 })
 export class ObsOverviewComponent implements OnInit {
-  constructor(private movieLibrarySvc: MovieLibraryService) {}
+  movieCount$: Observable<number>;
+
+  constructor(private movieLibrarySvc: MovieLibraryService) {
+    this.movieCount$ = this.movieLibrarySvc.movies$.pipe(
+      map((movies: Movie[]) => {
+        return movies.length;
+      })
+    );
+  }
 
   movieName: string = '';
 

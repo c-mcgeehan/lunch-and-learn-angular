@@ -17,7 +17,6 @@ export class MovieListComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     const movieSub = this.movieLibSvc.movies$.subscribe((movies) => {
-      console.log('Someone added a movie');
       this.moviesToDisplay = movies;
     });
     this.subscriptions.add(movieSub);

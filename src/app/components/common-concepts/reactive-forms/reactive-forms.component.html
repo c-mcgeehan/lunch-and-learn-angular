@@ -1,29 +1,28 @@
-<section class="p-2" style="border: 1px solid black;">
-
-
-<h3>Reactive Forms Component</h3>
-<form *ngIf="personForm" [formGroup]="personForm" (ngSubmit)="onSubmit()">
+<section class="p-2" style="border: 1px solid black">
+  <h3>Reactive Forms Component</h3>
+  <form *ngIf="personForm" [formGroup]="personForm" (ngSubmit)="onSubmit()">
     <mat-form-field class="p-2 grow" appearance="outline">
-        <mat-label>First Name</mat-label>
-        <input matInput  formControlName="firstName" placeholder="First Name">
-        <mat-error *ngIf="personForm.get('firstName')?.hasError('required')">
-            First Name is required.
-        </mat-error>
+      <mat-label>First Name*</mat-label>
+      <input matInput formControlName="firstName" placeholder="First Name" />
+      <mat-error *ngIf="personForm.get('firstName')?.hasError('required')">
+        First Name is required.
+      </mat-error>
     </mat-form-field>
     <mat-form-field class="p-2 grow" appearance="outline">
-        <mat-label>Last Name</mat-label>
-        <input matInput  formControlName="lastName" placeholder="Last Name">
-        <mat-error *ngIf="personForm.get('lastName')?.hasError('maxlength')">
-            Last Name cannot exceed 10 characters.
-        </mat-error>
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="lastName" placeholder="Last Name" />
+      <mat-error *ngIf="personForm.get('lastName')?.hasError('maxlength')">
+        Last Name cannot exceed 10 characters.
+      </mat-error>
     </mat-form-field>
     <mat-form-field class="p-2 grow" appearance="outline">
-        <mat-label>Age</mat-label>
-        <input matInput type="number" formControlName="age" placeholder="Age">
+      <mat-label>Age</mat-label>
+      <input matInput type="number" formControlName="age" placeholder="Age" />
     </mat-form-field>
     <div>
-        <button mat-raised-button color="primary" [disabled]="!personForm.valid">Submit</button>
+      <button mat-raised-button color="primary" [disabled]="!personForm.valid">
+        Submit
+      </button>
     </div>
-</form>
-
+  </form>
 </section>
