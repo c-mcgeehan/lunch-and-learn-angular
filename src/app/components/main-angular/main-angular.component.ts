@@ -16,13 +16,15 @@ export class MainAngularComponent implements OnInit {
     if (isForward) {
       if (this.activeId == 5) {
         this.activeId = 1;
+      } else {
+        this.activeId++;
       }
-      this.activeId++;
     } else {
       if (this.activeId == 1) {
         this.activeId = 1;
+      } else {
+        this.activeId--;
       }
-      this.activeId--;
     }
   }
 }

@@ -1,9 +1,32 @@
-<h3>Our Angular Clients</h3>
+<h2>Our Angular Clients</h2>
 
 <span (click)="toggleClient(false)">Previous</span
-><span (click)="toggleClient(true)">Next</span>
-<div>
-  <img *ngIf="activeId == 1" src="../../../assets/images/ProCanna.png" />
-  <img *ngIf="activeId == 2" src="../../../assets/images/MooreApp.png" />
-  <img *ngIf="activeId == 3" src="../../../assets/images/FecFiler.png" />
+><span (click)="toggleClient(true)" style="float:right;">Next</span>
+<div [ngSwitch]="activeId">
+
+  <div *ngSwitchCase="1">
+    <h3 class="bold pt-1">ProCanna</h3>
+    <img src="../../../assets/images/ProCanna.png" />
+  </div>
+
+  <div *ngSwitchCase="2">
+    <h3>MooreApp</h3>
+    <img src="../../../assets/images/MooreApp.png" />
+  </div>
+
+  <div *ngSwitchCase="3">
+    <h3>Aegis Fec Filer</h3>
+    <img  src="../../../assets/images/FecFiler.png" />
+  </div>
+
+  <div *ngSwitchCase="4">
+    <h3>PortfolioMobile</h3>
+    <img  src="../../../assets/images/PortfolioMobile.png" />
+  </div>
+
+  <div *ngSwitchCase="5">
+    <h3>Soake Pools</h3>
+    <img  src="../../../assets/images/SoakePools.png" />
+  </div>
+  
 </div>
