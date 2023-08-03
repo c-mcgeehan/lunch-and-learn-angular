@@ -1,0 +1,45 @@
+<h3>Observables Overview</h3>
+
+<ul>
+  <li id="myMouseLI">
+    <p>Service Calls & Events</p>
+    <p>How to make a web request</p>
+  </li>
+  <li>
+    <p class="link-text"><a routerLink="/observables/subjects">Subjects</a></p>
+    <p>Broadcast messages throughout the application</p>
+    <div>
+      <mat-form-field class="p-2 grow" appearance="outline">
+        <mat-label>Movie Title</mat-label>
+        <input matInput [(ngModel)]="movieName" />
+      </mat-form-field>
+    </div>
+    <p>
+      <button
+        class="pl-3 ml-3"
+        (click)="addMovie()"
+        mat-raised-button
+        color="primary"
+      >
+        Add New Movie
+      </button>
+    </p>
+  </li>
+  <li>
+    <p>Messaging</p>
+    <p>Broadcast messages throughout the application</p>
+  </li>
+  <li>
+    <p class="link-text">
+      <a routerLink="/observables/subscriptions">Subscription Handling</a>
+    </p>
+    <p>Finite & infinite observables, subscribe callback</p>
+  </li>
+  <li>
+    <p class="link-text">
+      <a routerLink="/observables/async-pipe">Async Pipe</a>
+    </p>
+    <p>Another way of handling a subscription</p>
+  </li>
+</ul>
+<movie-list></movie-list>

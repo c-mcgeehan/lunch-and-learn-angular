@@ -1,49 +1,71 @@
 <h3>Overview</h3>
 
 <ul>
-    <li>
-        <p>What languages do you use with Angular? </p>
-        <p>JS/Typescript, CSS, HTML.</p>
-    </li>
-    <li>
-        <p>Angular CLI</p>
-        <p>ng build, ng serve, ng generate, ng test.</p>
-    </li>
-    <li>
-        <p>Modules</p>
-        <p>These group components, pieces of functionality and imported modules together.</p>
-    </li>
-    <li>
-        <p>Components</p>
-        <p>Could be a page or a single control, or just some HTML. These can have coded functionality and are made up of an html, css, and .ts file, optionally (spec.ts).</p>
-    </li>
-    <li>
-        <p>Dependency Injection & Services</p>
-        <p>How functionality makes it's way from a service into a component.</p>
-    </li>
-    <li>
-        <p>Template Bindings</p>
-        <p>{{templateBindings}}</p>
-    </li>
-    <li>
-        <p>Routes</p>
-        <p>How to traverse the app.</p>
-    </li>
-    <li>
-        <p class="link-text"><a routerLink="/pipes">Pipes</a></p>
-        <p>Transforming data, built in pipes and custom.</p>
-    </li>
-    <li>
-        <p class="link-text"><a routerLink="/directives">Directives</a></p>
-        <p>Additional behavior to elements, built in directives and custom.</p>
-    </li>
-    <li>
-        <p (click)="toggleReactiveForms()">Reactive Forms</p>
-        <p>Model driven form controls, these can be typed/untyped.</p>
-        <reactive-forms (formSubmitted)="captureSubmission($event)" [defaultAge]="18" *ngIf="showReactiveForms"></reactive-forms>
-    </li>
-    <li>
-        <p class="link-text"><a routerLink="/observables">Observables</a></p>
-        <p>More Detail here.</p>
-    </li>
+  <li>
+    <p>What languages do you use with Angular?</p>
+    <p>JS/Typescript, CSS, HTML.</p>
+  </li>
+  <li>
+    <p>Angular CLI</p>
+    <p>ng build, ng serve, ng generate, ng test.</p>
+  </li>
+  <li>
+    <p>Modules</p>
+    <p>
+      These group components, pieces of functionality and imported modules
+      together.
+    </p>
+  </li>
+  <li>
+    <p>Components</p>
+    <p>
+      Could be a page or a single control, or just some HTML. These can have
+      coded functionality and are made up of an html, css, and .ts file,
+      optionally (spec.ts).
+    </p>
+  </li>
+  <li>
+    <p>Dependency Injection & Services</p>
+    <p>
+      How functionality makes it's way from a service into a component,
+      testability
+    </p>
+  </li>
+  <li>
+    <p>Template Bindings</p>
+    <p>{{ templateBindings }}</p>
+  </li>
+  <li>
+    <p>Routes</p>
+    <p>How to traverse the app.</p>
+  </li>
+  <li>
+    <p class="link-text"><a routerLink="/pipes">Pipes</a></p>
+    <p>Transforming data, built in pipes and custom.</p>
+  </li>
+  <li>
+    <p class="link-text"><a routerLink="/directives">Directives</a></p>
+    <p>Additional behavior to elements, built in directives and custom.</p>
+  </li>
+  <li>
+    <p (click)="toggleReactiveForms()">Reactive Forms</p>
+    <p>Model driven form controls, these can be typed/untyped.</p>
+    <reactive-forms
+      (formSubmitted)="captureSubmission($event)"
+      [defaultAge]="18"
+      *ngIf="showReactiveForms"
+    ></reactive-forms>
+  </li>
+  <li>
+    <p class="link-text">
+      <a routerLink="/observables/obs-overview">Observables</a>
+    </p>
+    <p>Asynchronous programming, event handling, subscribable</p>
+  </li>
+</ul>
+<button mat-raised-button (click)="getMovies()" color="primary">
+  Get Movies
+</button>
+<ul>
+  <li *ngFor="let movie of movies">{{ movie.title }}</li>
 </ul>

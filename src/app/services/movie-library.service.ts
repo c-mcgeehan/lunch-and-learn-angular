@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Movie } from '../models/movie';
-import { of, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, of, Subject, throwError } from 'rxjs';
+import { delay } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class MovieLibraryService {
@@ -28,7 +29,13 @@ export class MovieLibraryService {
     },
   ];
 
-  public constructor() {}
+  private moviesSubject: BehaviorSubject<Movie[]>;
+  movies$: Observable<Movie[]>;
+
+  public constructor() {
+    this.moviesSubject = new BehaviorSubject<Movie[]>(this.MOVIE_LIST);
+    this.movies$ = this.moviesSubject.asObservable();
+  }
 
   //Dummy service call to return observable instead of http request
   public getMovies() {
@@ -42,5 +49,25 @@ export class MovieLibraryService {
     } else {
       return of(movie);
     }
+  }
+
+  public addMovie(title: string) {
+    const newId =
+      this.MOVIE_LIST.reduce((maxId, obj) => Math.max(maxId, obj.id), 0) + 1;
+
+    const newMovie: Movie = {
+      id: newId,
+      title: title,
+      releaseDate: new Date(),
+    };
+    const delayedObservable = of(newMovie).pipe(delay(2500));
+
+    return delayedObservable.subscribe((movieToAdd) => {
+      this.MOVIE_LIST.push(movieToAdd);
+
+      //For broadcasting this
+      this.moviesSubject.next(this.MOVIE_LIST);
+      console.log('Movie added', movieToAdd);
+    });
   }
 }

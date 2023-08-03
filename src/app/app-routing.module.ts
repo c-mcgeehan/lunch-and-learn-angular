@@ -4,7 +4,11 @@ import { DirectivesComponent } from './components/common-concepts/directives/dir
 import { PipesComponent } from './components/common-concepts/pipes/pipes.component';
 import { QuickOverviewComponent } from './components/common-concepts/quick-overview/quick-overview.component';
 import { ReactiveFormsComponent } from './components/common-concepts/reactive-forms/reactive-forms.component';
+import { AsyncPipeComponent } from './components/observables/async-pipe/async-pipe.component';
 import { IntroComponent } from './components/observables/intro/intro.component';
+import { ObsOverviewComponent } from './components/observables/obs-overview/obs-overview.component';
+import { SubjectsComponent } from './components/observables/subjects/subjects.component';
+import { SubscriptionsComponent } from './components/observables/subscriptions/subscriptions.component';
 
 const routes: Routes = [
   {
@@ -12,8 +16,20 @@ const routes: Routes = [
     component: QuickOverviewComponent,
   },
   {
-    path: 'observables/intro',
-    component: IntroComponent,
+    path: 'observables/obs-overview',
+    component: ObsOverviewComponent,
+  },
+  {
+    path: 'observables/subscriptions',
+    component: SubscriptionsComponent,
+  },
+  {
+    path: 'observables/subjects',
+    component: SubjectsComponent,
+  },
+  {
+    path: 'observables/async-pipe',
+    component: AsyncPipeComponent,
   },
   {
     path: 'pipes',

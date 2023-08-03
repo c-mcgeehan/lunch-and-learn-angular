@@ -20,6 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { ObsOverviewComponent } from './components/observables/obs-overview/obs-overview.component';
+import { MovieListComponent } from './components/observables/movie-list/movie-list.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { MatButtonModule } from '@angular/material/button';
     NumberWordPipe,
     ColorHoverDirective,
     ReactiveFormsComponent,
+    ObsOverviewComponent,
+    MovieListComponent,
   ],
   imports: [
     BrowserModule,

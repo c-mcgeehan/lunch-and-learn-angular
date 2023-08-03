@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Movie } from 'src/app/models/movie';
 import { MovieLibraryService } from 'src/app/services/movie-library.service';
 
 @Component({
@@ -12,6 +13,8 @@ export class QuickOverviewComponent implements OnInit {
   templateBindings: string = 'How things show up in the HTML from code behind.';
   showReactiveForms: boolean = false;
 
+  movies: Movie[] = [];
+
   ngOnInit(): void {
     this.movieLibSvc.getMovies().subscribe((movies) => {
       console.log(movies);
@@ -24,5 +27,11 @@ export class QuickOverviewComponent implements OnInit {
 
   captureSubmission(data: any) {
     console.log('Captured Submission:', data);
+  }
+
+  getMovies() {
+    this.movieLibSvc.getMovies().subscribe((movies) => {
+      this.movies = movies;
+    });
   }
 }
