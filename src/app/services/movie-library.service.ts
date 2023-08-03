@@ -52,6 +52,7 @@ export class MovieLibraryService {
   }
 
   public addMovie(title: string) {
+    //Get highest id + 1
     const newId =
       this.MOVIE_LIST.reduce((maxId, obj) => Math.max(maxId, obj.id), 0) + 1;
 
@@ -60,12 +61,13 @@ export class MovieLibraryService {
       title: title,
       releaseDate: new Date(),
     };
-    const delayedObservable = of(newMovie).pipe(delay(2500));
+    //Add delay to simulate web call
+    const delayedObservable = of(newMovie).pipe(delay(1500));
 
     return delayedObservable.subscribe((movieToAdd) => {
       this.MOVIE_LIST.push(movieToAdd);
 
-      //For broadcasting this
+      //For broadcasting this to subscribers
       this.moviesSubject.next(this.MOVIE_LIST);
       console.log('Movie added', movieToAdd);
     });
