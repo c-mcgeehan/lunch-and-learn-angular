@@ -14,6 +14,7 @@ export class QuickOverviewComponent implements OnInit {
     'How things show up in the HTML from code behind, two-way binding';
   showPipes: boolean = false;
   showDirectives: boolean = false;
+  showReactiveForm: boolean = false;
 
   movies: Movie[] = [];
   textVal: string = '';
@@ -26,6 +27,10 @@ export class QuickOverviewComponent implements OnInit {
 
   toggleDirectives() {
     this.showDirectives = !this.showDirectives;
+  }
+
+  toggleReactiveForm() {
+    this.showReactiveForm = !this.showReactiveForm;
   }
 
   captureSubmission(data: any) {

@@ -52,9 +52,10 @@
     <directives *ngIf="showDirectives"></directives>
   </li>
   <li>
-    <p>Reactive Forms</p>
+    <p>Reactive Forms <span (click)="toggleReactiveForm()" style="font-weight:normal">(Expand/Hide)</span></p>
     <p>Model driven form controls, these can be typed/untyped.</p>
     <reactive-forms
+        *ngIf="showReactiveForm"
       (formSubmitted)="captureSubmission($event)"
       [defaultAge]="18"
     ></reactive-forms>
