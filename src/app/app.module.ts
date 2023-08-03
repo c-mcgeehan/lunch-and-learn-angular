@@ -21,6 +21,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { ObsOverviewComponent } from './components/observables/obs-overview/obs-overview.component';
 import { MovieListComponent } from './components/observables/movie-list/movie-list.component';
+import { MainAngularComponent } from './components/main-angular/main-angular.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { MovieListComponent } from './components/observables/movie-list/movie-li
     ReactiveFormsComponent,
     ObsOverviewComponent,
     MovieListComponent,
+    MainAngularComponent,
   ],
   imports: [
     AppRoutingModule,

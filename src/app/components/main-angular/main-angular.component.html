@@ -1,0 +1,9 @@
+<h3>Our Angular Clients</h3>
+
+<span (click)="toggleClient(false)">Previous</span
+><span (click)="toggleClient(true)">Next</span>
+<div>
+  <img *ngIf="activeId == 1" src="../../../assets/images/ProCanna.png" />
+  <img *ngIf="activeId == 2" src="../../../assets/images/MooreApp.png" />
+  <img *ngIf="activeId == 3" src="../../../assets/images/FecFiler.png" />
+</div>
